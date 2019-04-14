@@ -33,12 +33,15 @@
     Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
     Author: BootstrapMade.com
     License: https://bootstrapmade.com/license/
-  ======================================================= -->
-</head>
+    ======================================================= -->
+  </head>
 
-<body>
+  <body>
 
-  <header id="header" class="header header-hide">
+    <div>
+      <img src="img/nav.jpg" style="width: 100%;">
+    </div>
+<!--   <header id="header" class="header header-hide">
     <div class="container">
       <div id="logo" class="pull-left">
       </div>
@@ -47,176 +50,95 @@
           <li class="menu-active"><a href="#hero">Home</a></li>
           <li><a href="../index.php">Logout</a></li>
         </ul>
-      </nav><!-- #nav-menu-container -->
+      </nav>
     </div>
-  </header><!-- #header -->
+  </header> -->
 
-  <!--==========================
-    Hero Section
-  ============================-->
-  <section id="hero" class="wow fadeIn">
-    <div class="hero-container">
-      <h1>Welcome to the dashboard</h1>
-      <img src="img/hero-img.png" alt="Hero Imgs">
+  <div class="hero-container">
+    <img src="img/main.jpg" style="width: 100%;" alt="Hero Imgs">
+  </div>
+
+<form action="landing.php" method="POST">
+  <div class="container-fluid">
+    <div class="row bg-secondary p-4">
+      <h3 class="display-5 text-light" style="margin-left: 190px;"><b>Course finder</b></h3>
+   
+      <input type="text" name="search" placeholder="Search our courses" autocomplete="off" id="search" class="form-control" style="width: 500px; border-radius:0px; margin-left: 90px;">
+      <button class="btn btn-info" type="submit" style="width: 40px; border-radius:0px;"><i class="fa fa-search"></i></button>
+      
     </div>
-  </section><!-- #hero -->
-
-  <!--==========================
-    Get Started Section
-  ============================-->
-  <section id="get-started" class="padd-section text-center wow fadeInUp">
-
-    <div class="container">
-      <div class="section-title text-center">
-
-        <h2>SIMPLE SQL INJECTION INTRO</h2>
-
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-6 col-lg-4">
-          <div class="feature-block">
-
-            <img src="img/svg/cloud.svg" alt="img" class="img-fluid">
-            <h4>introducing whatsapp</h4>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-            <a href="#">read more</a>
-
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="feature-block">
-
-            <img src="img/svg/planet.svg" alt="img" class="img-fluid">
-            <h4>user friendly interface</h4>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-            <a href="#">read more</a>
-
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="feature-block">
-
-            <img src="img/svg/asteroid.svg" alt="img" class="img-fluid">
-            <h4>build the app everyone love</h4>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-            <a href="#">read more</a>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
+  </div>
+</form>
   
-  <!--==========================
-    Footer
-  ============================-->
-  <footer class="footer">
+  <section id="get-started" class="padd-section text-center wow fadeInUp">
     <div class="container">
-      <div class="row">
 
-        <div class="col-md-12 col-lg-4">
-          <div class="footer-logo">
+      <?php 
 
-            <a class="navbar-brand" href="#">Art Of Coding</a>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
+      // import connection
+      require_once('../connection.php');
+      if(isset($_POST['search'])){
 
-          </div>
-        </div>
+        $search = $_POST['search'];
+        $query = "select * from courses where courseName like '%$search%' ";
+        if(mysqli_multi_query ($connection,$query)){
+          if($result = mysqli_store_result($connection)){
+            while($row = mysqli_fetch_array($result)):
+    ?>
 
-        <div class="col-sm-6 col-md-3 col-lg-2">
-          <div class="list-menu">
+<ul style="list-style: none;" class="mb-5">
+  <li style="font-size: 23px;"> *course : <?php echo $row['courseName']; ?> <br> #Description: <?php echo $row['description']; ?></li>
+   <hr class="my-3">
+</ul>
 
-            <h4>About Us</h4>
+<?php 
 
-            <ul class="list-unstyled">
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Features item</a></li>
-              <li><a href="#">Live streaming</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
+endwhile;
+    }
+  }
+}
 
-          </div>
-        </div>
+ ?>
+<div class="section-title text-center">
+  <h2>SIMPLE SQL INJECTION INTRO</h2>
+</div>
+</div>
+</section>
 
-        <div class="col-sm-6 col-md-3 col-lg-2">
-          <div class="list-menu">
+<div>
+  <img src="img/middle.jpg" style="width: 100%;" >
+</div>
 
-            <h4>About Us</h4>
+<div>
+  <img src="img/students.jpg" style="width: 100%;" >
+</div>
 
-            <ul class="list-unstyled">
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Features item</a></li>
-              <li><a href="#">Live streaming</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
+<div>
+  <img src="img/footer.jpg" style="width: 100%;" >
+</div>
 
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-3 col-lg-2">
-          <div class="list-menu">
-
-            <h4>Support</h4>
-
-            <ul class="list-unstyled">
-              <li><a href="#">faq</a></li>
-              <li><a href="#">Editor help</a></li>
-              <li><a href="#">Contact us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
-
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-3 col-lg-2">
-          <div class="list-menu">
-
-            <h4>Abou Us</h4>
-
-            <ul class="list-unstyled">
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Features item</a></li>
-              <li><a href="#">Live streaming</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
+<div>
+  <img src="img/footer-last.jpg" style="width: 100%;" >
+</div>
 
 
-  </footer>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/superfish/hoverIntent.js"></script>
+<script src="lib/superfish/superfish.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/modal-video/js/modal-video.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<!-- Contact Form JavaScript File -->
+<script src="contactform/contactform.js"></script>
 
-
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/modal-video/js/modal-video.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+<!-- Template Main Javascript File -->
+<script src="js/main.js"></script>
 
 </body>
 </html>

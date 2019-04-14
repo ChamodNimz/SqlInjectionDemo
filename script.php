@@ -21,4 +21,5 @@ if(mysqli_multi_query ($connection,$query)){
 
 	}
 
+
 ?>

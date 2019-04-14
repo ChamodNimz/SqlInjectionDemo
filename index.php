@@ -1,6 +1,3 @@
-
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +10,7 @@
 	<!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!-- 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<!--Custom styles-->
@@ -31,24 +28,27 @@
 				<div class="alert alert-danger" role="alert"> loggin failed ...! </div>
 
 			<?php endif; ?>
+
+			<div class="alert alert-danger" id="frontAlert" role="alert">some  error ... !</div>
+
 				<div class="card-header">
 					<h3>Sign In</h3>
 
 				</div>
 				<div class="card-body">
-					<form action="script.php" method="POST">
+					<form action="script.php" method="POST"> onsubmit="return  beforeSubmit();">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" name="username" placeholder="username">
+							<input type="text" class="form-control" name="username" id="username" placeholder="username">
 
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="password" class="form-control" placeholder="password">
+							<input type="password" name="password" id="password" class="form-control" placeholder="password">
 						</div>
 
 						<div class="form-group">
@@ -64,5 +64,6 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
