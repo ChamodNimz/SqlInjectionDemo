@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2019 at 12:29 AM
+-- Generation Time: Apr 14, 2019 at 07:24 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -41,6 +41,27 @@ INSERT INTO `admin` (`Id`, `username`, `password`) VALUES
 (2, 'satish', '321'),
 (8, 'admin', 'root');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses`
+--
+
+CREATE TABLE `courses` (
+  `Id` int(11) NOT NULL,
+  `courseName` varchar(20) NOT NULL,
+  `description` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`Id`, `courseName`, `description`) VALUES
+(1, 'computing', 'A degree with computing & AI '),
+(2, 'electronics', 'Degree in electrical enginee.'),
+(3, 'cs', '<script>alert("your have been hacked !!");</script>');
+
 --
 -- Indexes for dumped tables
 --
@@ -52,6 +73,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -60,6 +87,11 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `admin`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
