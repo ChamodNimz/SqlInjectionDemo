@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+/*background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');*/
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -52,8 +52,8 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
-color: black;
+background-color: #0066CB;
+color: white;
 border:0 !important;
 }
 
@@ -76,8 +76,8 @@ margin-right: 5px;
 }
 
 .login_btn{
-color: black;
-background-color: #FFC312;
+color: white;
+background-color: #0066CB;
 width: 100px;
 }
 

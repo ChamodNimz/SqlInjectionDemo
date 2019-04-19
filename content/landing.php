@@ -61,10 +61,10 @@
 <form action="landing.php" method="POST">
   <div class="container-fluid">
     <div class="row bg-secondary p-4">
-      <h3 class="display-5 text-light" style="margin-left: 190px;"><b>Course finder</b></h3>
+      <h3 class="display-5 text-light" style="margin-left: 190px;"><b>Drop a comment</b></h3>
    
-      <input type="text" name="search" placeholder="Search our courses" autocomplete="off" id="search" class="form-control" style="width: 500px; border-radius:0px; margin-left: 90px;">
-      <button class="btn btn-info" type="submit" style="width: 40px; border-radius:0px;"><i class="fa fa-search"></i></button>
+      <input type="text" name="comment" placeholder="Comment here" autocomplete="off" id="comment" class="form-control" style="width: 500px; border-radius:0px; margin-left: 90px;">
+      <button class="btn btn-info" type="submit" style="width: 40px; border-radius:0px;"><i class="fa fa-send"></i></button>
       
     </div>
   </div>
@@ -77,10 +77,10 @@
 
       // import connection
       require_once('../connection.php');
-      if(isset($_POST['search'])){
+      if(isset($_POST['comment'])){
 
-        $search = $_POST['search'];
-        $query = "select * from courses where courseName like '%$search%' ";
+        $comment = $_POST['comment'];
+        $query = "insert into comments (comment) values ('$comment') ";
         if(mysqli_multi_query ($connection,$query)){
           if($result = mysqli_store_result($connection)){
             while($row = mysqli_fetch_array($result)):
@@ -99,11 +99,26 @@ endwhile;
 }
 
  ?>
-<div class="section-title text-center">
-  <h2>SIMPLE SQL INJECTION INTRO</h2>
-</div>
+<!-- <div class="section-title text-center">
+  <h2>SIMPLE XSS INTRO</h2>
+</div> -->
 </div>
 </section>
+
+<div class="wow fadeInUp">
+<h2 class="text-center">Comments</h2>
+<ul style="list-style: none; margin-left:200px;">
+  <?php 
+    $query = "select * from comments";
+    $data = mysqli_query($connection,$query);
+    while($row = mysqli_fetch_array($data)):
+  ?>
+  <li style="font-size: 17px"><?php echo $row['comment'] ?></li> - <small><b>Anonymous</b></small>
+  <hr class="my-1"></hr>
+<?php endwhile; ?>
+</ul>
+  
+</div>
 
 <div>
   <img src="img/middle.jpg" style="width: 100%;" >

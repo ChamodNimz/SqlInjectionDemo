@@ -17,11 +17,14 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<div class="container p-5">
-		<h1 class="text-light">Welcome to SQL Injection 101</h1>
-		<div class="d-flex justify-content-center h-100">
 
-			<div class="card text-light p-4">
+<div>
+  <img src="content/img/login-header.jpg" style="width: 100%;" >
+</div>
+
+	<div class="container p-5">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card text-light p-4" style="margin-top: 70px;">
 				<?php 
 				if(isset($_GET['error'])):
 				 ?>
@@ -30,10 +33,8 @@
 			<?php endif; ?>
 
 			<div class="alert alert-danger" id="frontAlert" role="alert">some  error ... !</div>
-
 				<div class="card-header">
 					<h3>Sign In</h3>
-
 				</div>
 				<div class="card-body">
 					<form action="script.php" method="POST" onsubmit="return  beforeSubmit();">
@@ -42,7 +43,6 @@
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
 							<input type="text" class="form-control" name="username" id="username" placeholder="username">
-
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
@@ -57,13 +57,18 @@
 					</form>
 				</div>
 				<div class="card-footer">
-					Powered by @SnowFlake 
+					Powered by @SnowFlake AKA Chamod 
 					<br>
 					<small>subscribe <b>Art Of Coding</b></small>
 				</div>
 			</div>
 		</div>
 	</div>
+
+<div>
+  <img src="content/img/login-footer.jpg" style="width: 100%; margin-top: -140px;" >
+</div>
+
 	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2019 at 07:24 PM
+-- Generation Time: Apr 19, 2019 at 06:40 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -39,7 +39,31 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`Id`, `username`, `password`) VALUES
 (1, 'chamod', '123'),
 (2, 'satish', '321'),
-(8, 'admin', 'root');
+(8, 'admin', 'root'),
+(12, 'user', 'user'),
+(13, 'user', 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `comment` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `comment`) VALUES
+(1, 'initial comment'),
+(2, 'winter came'),
+(3, 'the end is near'),
+(6, 'When you play the game of thrones you win or you die'),
+(8, 'A Song of Ice and fire');
 
 -- --------------------------------------------------------
 
@@ -59,8 +83,7 @@ CREATE TABLE `courses` (
 
 INSERT INTO `courses` (`Id`, `courseName`, `description`) VALUES
 (1, 'computing', 'A degree with computing & AI '),
-(2, 'electronics', 'Degree in electrical enginee.'),
-(3, 'cs', '<script>alert("your have been hacked !!");</script>');
+(2, 'electronics', 'Degree in electrical enginee.');
 
 --
 -- Indexes for dumped tables
@@ -71,6 +94,12 @@ INSERT INTO `courses` (`Id`, `courseName`, `description`) VALUES
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `courses`
@@ -86,7 +115,12 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `courses`
 --
