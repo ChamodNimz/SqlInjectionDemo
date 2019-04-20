@@ -14,12 +14,12 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 <body>
 
 <div>
-  <img src="content/img/login-header.jpg" style="width: 100%;" >
+  <img src="./content/img/login-header.jpg" style="width: 100%;" >
 </div>
 
 	<div class="container p-5">
@@ -66,9 +66,9 @@
 	</div>
 
 <div>
-  <img src="content/img/login-footer.jpg" style="width: 100%; margin-top: -140px;" >
+  <img src="./content/img/login-footer.jpg" style="width: 100%; margin-top: -140px;" >
 </div>
 
-	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="./main.js"></script>
 </body>
 </html>
