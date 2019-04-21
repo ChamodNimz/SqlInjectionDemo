@@ -1,6 +1,6 @@
-let frontAlert;
+var frontAlert;
 
-$(document).ready(()=>{
+$(document).ready(function(){
 	frontAlert = $("#frontAlert");
 	frontAlert.hide();
 });
@@ -15,8 +15,8 @@ if(!validate()){
 
 function validate(){
 
-let username = $("#username");
-let password = $("#password");
+var username = $("#username");
+var password = $("#password");
 
 if(username.val().length > 0 && password.val().length > 0  ){
 
